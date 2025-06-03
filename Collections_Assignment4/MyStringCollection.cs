@@ -16,30 +16,26 @@ namespace Collections_Assignment4
         
         }
 
-        void Add(string item)
+        public void Add(string item)
         {
             if (item != null)
             {
-                if (stringColl.Contains(item))
-                {
-                    Remove(item);
-                    stringColl.Add(item);
-                }
-                stringColl.Add(item.ToString());
+                stringColl.Add(item);
             }
         }
 
-        void Remove(string item)
+        public bool Remove(string item)
         {
-            if(item != null) 
-            { 
-                stringColl.Remove(item); 
+            if (item != null)
+            {
+                return stringColl.Remove(item);
             }
+            return false;
         }
 
-        bool Contains(string item)
+        public bool Contains(string item)
         {
-            if(item != null)
+            if (stringColl.Count != 0)
             {
                 if (stringColl.Contains(item))
                 {
@@ -51,9 +47,9 @@ namespace Collections_Assignment4
         }
 
 
-        void PrintAll()
+        public void PrintAll()
         {
-            if(stringColl is not null)
+            if(stringColl.Count != 0)
             {
                 foreach(string item in stringColl)
                 {
@@ -61,7 +57,7 @@ namespace Collections_Assignment4
                 }
             }
 
-            Console.WriteLine("");
+            Console.WriteLine("No Data in the list");
         }
 
     }
